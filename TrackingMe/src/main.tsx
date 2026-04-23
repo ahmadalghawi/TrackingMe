@@ -10,7 +10,9 @@ const router = createBrowserRouter([
   { path: '/', element: <Hero /> },
   { path: '/tracking', element: <Tracking /> },
   { path: '*', element: <NotFound /> },
-]);
+], {
+  basename: '/TrackingMe/',
+});
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -1,0 +1,1 @@
+{"root":["./src/main.tsx","./src/components/box3d.tsx","./src/components/settingstoggles.tsx","./src/components/trackingcards.tsx","./src/components/tweakspanel.tsx","./src/components/wordmark.tsx","./src/lib/i18n.ts","./src/lib/tracking.ts","./src/lib/types.ts","./src/routes/hero.tsx","./src/routes/notfound.tsx","./src/routes/tracking.tsx"],"version":"5.9.3"}
