@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Home",
+    "orders": "My Orders",
+    "brand": "TrackMe"
+  },
+  "hero": {
+    "title": "Track Your Parcels",
+    "subtitle": "Stay informed about your deliveries every step of the way.",
+    "searchPlaceholder": "Enter parcel ID...",
+    "searchButton": "Track",
+    "viewAll": "View All Orders"
+  },
+  "stats": {
+    "total": "Total Orders",
+    "onTheWay": "On The Way",
+    "readyForPickup": "Ready for Pickup",
+    "delivered": "Delivered",
+    "infoReceived": "Info Received"
+  },
+  "orders": {
+    "title": "My Orders",
+    "subtitle": "Track and manage all your deliveries",
+    "searchPlaceholder": "Search by parcel ID or sender...",
+    "noResults": "No orders found",
+    "noResultsHint": "Try adjusting your search or filter",
+    "loading": "Loading orders...",
+    "error": "Failed to load orders. Showing cached data.",
+    "filters": {
+      "all": "All",
+      "onTheWay": "On The Way",
+      "readyForPickup": "Ready for Pickup",
+      "delivered": "Delivered",
+      "infoReceived": "Info Received"
+    }
+  },
+  "card": {
+    "parcelId": "Parcel ID",
+    "sender": "Sender",
+    "eta": "ETA",
+    "location": "Location",
+    "status": "Status",
+    "customer": "Customer",
+    "phone": "Phone",
+    "notes": "Notes",
+    "noNotes": "No notes",
+    "verification": "Verification Required",
+    "locationId": "Location ID",
+    "coordinates": "Coordinates",
+    "lastUpdated": "Last Updated",
+    "locationOk": "Location OK",
+    "locationIssue": "Location Issue",
+    "showDetails": "Show Details",
+    "hideDetails": "Hide Details"
+  },
+  "status": {
+    "delivered": "Delivered",
+    "on-the-way": "On The Way",
+    "ready-for-pickup": "Ready for Pickup",
+    "order-info-received": "Info Received"
+  }
+}

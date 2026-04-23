@@ -1,0 +1,62 @@
+{
+  "nav": {
+    "home": "Hem",
+    "orders": "Mina Beställningar",
+    "brand": "TrackMe"
+  },
+  "hero": {
+    "title": "Spåra Dina Paket",
+    "subtitle": "Håll koll på dina leveranser varje steg på vägen.",
+    "searchPlaceholder": "Ange paket-ID...",
+    "searchButton": "Spåra",
+    "viewAll": "Visa Alla Beställningar"
+  },
+  "stats": {
+    "total": "Totalt Antal",
+    "onTheWay": "På Väg",
+    "readyForPickup": "Redo för Upphämtning",
+    "delivered": "Levererade",
+    "infoReceived": "Info Mottagen"
+  },
+  "orders": {
+    "title": "Mina Beställningar",
+    "subtitle": "Spåra och hantera alla dina leveranser",
+    "searchPlaceholder": "Sök efter paket-ID eller avsändare...",
+    "noResults": "Inga beställningar hittades",
+    "noResultsHint": "Försök justera din sökning eller filter",
+    "loading": "Laddar beställningar...",
+    "error": "Det gick inte att ladda beställningar. Visar cachad data.",
+    "filters": {
+      "all": "Alla",
+      "onTheWay": "På Väg",
+      "readyForPickup": "Redo för Upphämtning",
+      "delivered": "Levererade",
+      "infoReceived": "Info Mottagen"
+    }
+  },
+  "card": {
+    "parcelId": "Paket-ID",
+    "sender": "Avsändare",
+    "eta": "Beräknad Ankomst",
+    "location": "Plats",
+    "status": "Status",
+    "customer": "Kund",
+    "phone": "Telefon",
+    "notes": "Anteckningar",
+    "noNotes": "Inga anteckningar",
+    "verification": "Verifiering Krävs",
+    "locationId": "Plats-ID",
+    "coordinates": "Koordinater",
+    "lastUpdated": "Senast Uppdaterad",
+    "locationOk": "Plats OK",
+    "locationIssue": "Platsproblem",
+    "showDetails": "Visa Detaljer",
+    "hideDetails": "Dölj Detaljer"
+  },
+  "status": {
+    "delivered": "Levererad",
+    "on-the-way": "På Väg",
+    "ready-for-pickup": "Redo för Upphämtning",
+    "order-info-received": "Info Mottagen"
+  }
+}
