@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import Box3D from '@/components/Box3D';
-import SettingsToggles from '@/components/SettingsToggles';
+import Navbar from '@/components/Navbar';
 import TrackingCards from '@/components/TrackingCards';
 import TweaksPanel from '@/components/TweaksPanel';
 import Wordmark from '@/components/Wordmark';
@@ -66,22 +65,7 @@ export default function Hero() {
 
   return (
     <div className={`hero ${isOpenState ? 'is-open-state' : ''}`}>
-      <nav className="nav">
-        <div className="brand">
-          <div className="brand-dot" />
-          TrackMe
-        </div>
-        <ul>
-          <li><Link to="/tracking">{t('nav.tracking')}</Link></li>
-          <li><a href="#">{t('nav.couriers')}</a></li>
-          <li><a href="#">{t('nav.api')}</a></li>
-          <li><a href="#">{t('nav.pricing')}</a></li>
-        </ul>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10 }}>
-          <SettingsToggles />
-          <Link className="cta" to="/tracking">{t('nav.startTracking')}</Link>
-        </div>
-      </nav>
+      <Navbar ctaType="start" />
 
       <section className="stage">
         <div
@@ -165,7 +149,7 @@ export default function Hero() {
         <div className="stat"><div className="num">~180ms</div><div className="lbl">{t('stats.latency')}</div></div>
       </div>
 
-      <button
+      {/* <button
         onClick={() => setTweaksOpen((v) => !v)}
         style={{
           position: 'fixed',
@@ -189,7 +173,7 @@ export default function Hero() {
 
       {tweaksOpen && (
         <TweaksPanel tweaks={tweaks} setTweaks={setTweaks} onClose={() => setTweaksOpen(false)} />
-      )}
+      )} */}
     </div>
   );
 }

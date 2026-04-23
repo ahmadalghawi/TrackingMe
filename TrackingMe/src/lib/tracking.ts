@@ -1,7 +1,10 @@
 import type { RawOrder, TimelineEvent, TrackingCardVM, TrackingResult } from './types';
 
 const API_URL = 'https://my.api.mockaroo.com/orders.json?key=e49e6840';
-const FALLBACK_URL = '/packagedata.json';
+// BASE_URL is automatically set by Vite to the `base` in vite.config.ts.
+// Locally: '/TrackingMe/'  →  http://localhost:5173/TrackingMe/packagedata.json
+// GitHub:  '/TrackingMe/'  →  https://ahmadalghawi.github.io/TrackingMe/packagedata.json
+const FALLBACK_URL = import.meta.env.BASE_URL + 'packagedata.json';
 
 const STATUS_MAP: Record<string, { key: TrackingCardVM['status']; labelKey: string; progress: number; activeStop: number }> = {
   'delivered':           { key: 'delivered',        labelKey: 'status.delivered',      progress: 1.00, activeStop: 4 },
@@ -41,7 +44,14 @@ export function normalize(rec: RawOrder, i: number): TrackingCardVM {
   };
 }
 
-export async function fetchTrackingAll(): Promise<TrackingResult> {
+// In-memory cache — same pattern as the frontend/src/services/api.ts
+// Ensures Hero page and Tracking page always show identical packages,
+// even when the live Mockaroo API would otherwise return new random data on each call.
+let _cache: TrackingResult | null = null;
+
+export async function fetchTrackingAll(forceRefresh = false): Promise<TrackingResult> {
+  if (_cache && !forceRefresh) return _cache;
+
   try {
     const ctrl = new AbortController();
     const to = setTimeout(() => ctrl.abort(), 3500);
@@ -50,13 +60,15 @@ export async function fetchTrackingAll(): Promise<TrackingResult> {
     if (!r.ok) throw new Error(`status ${r.status}`);
     const data = (await r.json()) as RawOrder[];
     if (Array.isArray(data) && data.length) {
-      return { source: 'api', items: data.map(normalize) };
+      _cache = { source: 'api', items: data.map(normalize) };
+      return _cache;
     }
     throw new Error('empty');
   } catch {
     const r = await fetch(FALLBACK_URL);
     const data = (await r.json()) as RawOrder[];
-    return { source: 'fallback', items: data.map(normalize) };
+    _cache = { source: 'fallback', items: data.map(normalize) };
+    return _cache;
   }
 }
 

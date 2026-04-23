@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
-import SettingsToggles from '@/components/SettingsToggles';
+import { useSearchParams } from 'react-router-dom';
+import Navbar from '@/components/Navbar';
 import { useSettings } from '@/lib/i18n';
 import { buildTimeline, fetchTrackingAll, formatEta, formatEventTime } from '@/lib/tracking';
 import type { TimelineEvent, TrackingCardVM } from '@/lib/types';
@@ -222,22 +222,7 @@ export default function Tracking() {
 
   return (
     <div className="tp">
-      <nav className="nav nav-padded" style={{ padding: '28px 0' }}>
-        <Link to="/" className="brand" style={{ textDecoration: 'none' }}>
-          <div className="brand-dot" />
-          TrackMe
-        </Link>
-        <ul>
-          <li><Link to="/tracking" className="active">{t('nav.tracking')}</Link></li>
-          <li><a href="#">{t('nav.couriers')}</a></li>
-          <li><a href="#">{t('nav.api')}</a></li>
-          <li><a href="#">{t('nav.pricing')}</a></li>
-        </ul>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <SettingsToggles />
-          <Link className="cta" to="/">{t('nav.back')}</Link>
-        </div>
-      </nav>
+      <Navbar padded ctaType="back" />
 
       <header className="tp-header">
         <div className="tp-h-left">
