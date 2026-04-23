@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { Link } from 'react-router-dom';
 import { useSettings } from '@/lib/i18n';
 import { buildTimeline, formatEta, formatEventTime } from '@/lib/tracking';
 import type { LayoutMode, TimelineEvent, TrackingCardVM } from '@/lib/types';
@@ -112,10 +113,10 @@ function ExpandedCardDetail({ data, timeline, onClose }: { data: TrackingCardVM;
           </li>
         ))}
       </ol>
-      <a className="exp-cta" href={`/tracking?id=${encodeURIComponent(data.id)}`}>
+      <Link className="exp-cta" to={`/tracking?id=${encodeURIComponent(data.id)}`}>
         {t('exp.viewFull')}
         <span className="exp-cta-arrow">→</span>
-      </a>
+      </Link>
     </div>
   );
 }
